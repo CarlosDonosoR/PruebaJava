@@ -31,7 +31,7 @@ public class Television extends Electrodomestico {
 	public float getResolucion() {
 		return resolucion;
 	}
-
+//hola
 	public boolean isSintonizadorTDT() {
 		return sintonizadorTDT;
 	}
