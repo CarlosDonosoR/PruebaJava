@@ -94,28 +94,27 @@ public class Electrodomestico {
 		}
 	}
 
-	public float precioFinal(float valor) {
-		valor = 0;
+	public float precioFinal() {
 		Electrodomestico electro = new Electrodomestico();
 		if (electro.getPeso()>= 0 && electro.getPeso()<= 19) {
-			float precio = electro.getPrecioBase() + 10 + (int)valor;
+			float precio = electro.getPrecioBase() + 10;
 			return precio;
 		} else {
 			if (electro.getPeso()>=20 && electro.getPeso()<= 49) {
-				float precio = electro.getPrecioBase() + 50 + (int)valor;
+				float precio = electro.getPrecioBase() + 50;
 				return precio;
 			} else {
 				if (electro.getPeso()>=50 && electro.getPeso()<= 79) {
-					float precio = electro.getPrecioBase() + 80 + (int)valor;
+					float precio = electro.getPrecioBase() + 80;
 					return precio;	
 				} else {
 					if (electro.getPeso() >= 80) {
-						float precio = electro.getPrecioBase() + 100 + (int)valor;
+						float precio = electro.getPrecioBase() + 100;
 						return precio;
 					}
 				}
 			}
 		}
-		return valor;
+		return CONSUMO_ENERGETICO;
 	}
 }

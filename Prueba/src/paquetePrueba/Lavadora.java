@@ -29,10 +29,13 @@ public class Lavadora extends Electrodomestico {
 	}
 	
 	//Metodos
-	public void precioFinal() {
+	public float precioFinal() {
 		Lavadora lavadora = new Lavadora();
 		if(lavadora.getCarga() >= 30) {
-			float precioFinal = lavadora.precioFinal(50);
+			float precio = lavadora.precioFinal();
+			float precioFinal = precio + 50;
+			return precioFinal;
 		}
+		return PRECIO_BASE;
 	}
 }

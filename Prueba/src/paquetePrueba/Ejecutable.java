@@ -17,7 +17,7 @@ public class Ejecutable {
 		electrodomesticos[9] = new Lavadora();
 		
 		for (int i = 0; i < electrodomesticos.length; i++) {
-			System.out.println(electrodomesticos[i]);
+			System.out.println(electrodomesticos[i].precioFinal());
 			}
 		}
 	}
