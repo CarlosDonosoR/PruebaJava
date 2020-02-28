@@ -1,9 +1,14 @@
 package paquetePrueba;
-
+/**
+ * Clase principal que ejecuta el programa
+ * @author Carlos Donoso R
+ * @version 1.0
+ */
 public class Ejecutable {
 
 	public static void main(String[] args) {
 		
+		//Campos de la Clase
 		Electrodomestico[] electrodomesticos = new Electrodomestico[10];
 		electrodomesticos[0] = new Lavadora(40);
 		electrodomesticos[1] = new Television(555,80);
@@ -33,4 +38,4 @@ public class Ejecutable {
 		System.out.println("Suma precio lavadoras: $" + precioTotalLava);
 		System.out.println("Precio por todos los electrodomesticos: $" + precioTotal);
 			}
-}
+}//Fin Clase

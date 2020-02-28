@@ -1,5 +1,9 @@
 package paquetePrueba;
-
+/**
+ * Clase para los objetos de tipo Television. Clase Hija que hereda de Electrodomestico
+ * @author Carlos Donoso R
+ * @version 1.0
+ */
 public class Television extends Electrodomestico {
 
 	// Atributos
@@ -10,35 +14,51 @@ public class Television extends Electrodomestico {
 	final static float RESOLUCION = 20;
 	final static boolean SINTONIZADOR_TDT = false;
 
-	// Constructores
+	/**
+	 * Constructor con todos los atributos por defecto
+	 */
 	public Television() {
 		super();
 		this.resolucion = RESOLUCION;
 		this.sintonizadorTDT = SINTONIZADOR_TDT;
-	}
+	}//Fin Constructor
 
+	/**
+	 * Constructor que recibe un precio y un peso por parametro
+	 * @param precio Precio asignado al objeto
+	 * @param peso Peso asignado al objeto
+	 */
 	public Television(float precio, float peso) {
 		super(precio, peso);
 		this.resolucion = RESOLUCION;
 		this.sintonizadorTDT = SINTONIZADOR_TDT;
-	}
+	}//Fin Constructor
 
+	/**
+	 * Constructor que recibe la resolución y el tipo de sintonizador TDT 
+	 * por parametro
+	 * @param resolucion Corresponde a la resolución asignada
+	 * @param sintonizadorTDT Es el tipo de sintonizador asignado
+	 */
 	public Television(float resolucion, boolean sintonizadorTDT) {
 		super();
 		this.resolucion = resolucion;
 		this.sintonizadorTDT = sintonizadorTDT;
-	}
+	}//Fin Constructor
 
 	// Getter
 	public float getResolucion() {
 		return resolucion;
 	}
-//hola
+
 	public boolean isSintonizadorTDT() {
 		return sintonizadorTDT;
-	}
+	}//Fin Getter
 
-	// Metodos
+	/**
+	 * Metodo que calcula el precio final de un objeto Electrodomestico
+	 * de tipo Television segun su resolución y tipo de sintonizador. (Heredado)
+	 */
 	@Override
 	public float precioFinal(Electrodomestico television) {
 		float porcentaje = (float) 0.3;
@@ -62,5 +82,5 @@ public class Television extends Electrodomestico {
 							}
 				return super.precioFinal(television);
 		}
-}
-}
+}//Fin Metodo
+}//Fin Clase
