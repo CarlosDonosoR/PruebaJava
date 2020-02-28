@@ -27,6 +27,8 @@ public class Television extends Electrodomestico {
 	 * Constructor que recibe un precio y un peso por parametro
 	 * @param precio Precio asignado al objeto
 	 * @param peso Peso asignado al objeto
+	 * @param consumoEnergetico Valor asignado al consumo energetico
+	 * @param peso Dato asignado al peso
 	 */
 	public Television(float precioBase, String color, char consumoEnergetico, float peso) {
 		super(precioBase, color, consumoEnergetico, peso);
