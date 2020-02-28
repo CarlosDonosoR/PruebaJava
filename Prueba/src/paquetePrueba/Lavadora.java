@@ -13,6 +13,11 @@ public class Lavadora extends Electrodomestico {
 		super();
 	}
 	
+	public Lavadora(int precioBase, String color, char consumoEnergetico, float peso) {
+		super(precioBase, color, consumoEnergetico, peso);
+		this.carga = CARGA;
+	}
+	
 	public Lavadora(float precio, float peso) {
 		super(precio, peso);
 		this.carga = CARGA;
@@ -29,13 +34,19 @@ public class Lavadora extends Electrodomestico {
 	}
 	
 	//Metodos
-	public float precioFinal() {
-		Lavadora lavadora = new Lavadora();
-		if(lavadora.getCarga() >= 30) {
-			float precio = lavadora.precioFinal();
-			float precioFinal = precio + 50;
+	@Override
+	public float precioFinal(Electrodomestico lavadora) {
+		float precioFinal = 0;
+		if(this.carga < 30) {
+			precioFinal = super.precioFinal(lavadora);
 			return precioFinal;
-		}
-		return PRECIO_BASE;
+		}else {
+			if(this.carga >= 30) {
+			float precioFinal2 = super.precioFinal(lavadora) + 50;
+			return precioFinal2;
+		}else {
+		return super.precioFinal(lavadora);
 	}
+}
+}
 }

@@ -12,7 +12,9 @@ public class Television extends Electrodomestico {
 
 	// Constructores
 	public Television() {
-
+		super();
+		this.resolucion = RESOLUCION;
+		this.sintonizadorTDT = SINTONIZADOR_TDT;
 	}
 
 	public Television(float precio, float peso) {
@@ -37,19 +39,28 @@ public class Television extends Electrodomestico {
 	}
 
 	// Metodos
-	public float precioFinal() {
-		Television television = new Television();
+	@Override
+	public float precioFinal(Electrodomestico television) {
 		float porcentaje = (float) 0.3;
-		if (television.getResolucion() >= 40) {
-			float preciofinal = television.precioFinal();
-			float preciofinal2 = Utiles.multiplica(preciofinal, porcentaje);
-			float preciofinal3 = preciofinal - preciofinal2;
-			return preciofinal3;
-			
-			//if (television.isSintonizadorTDT() == true) 
-				//float preciofinal4 = preciofinal3 += 50;
-				//return preciofinal4;
+		float preciofinal2 = 0;
+		float preciofinal3 = 0;
+		float preciofinal4 = 0;
+				if(television instanceof Television && this.resolucion >= 40 && this.sintonizadorTDT == (true)) {
+										float preciofinal1 = Utiles.multiplica(super.precioFinal(television), porcentaje);
+										preciofinal4 =super.precioFinal(television) + preciofinal1 + 50;
+										return preciofinal4;
+							}else {
+							if (television instanceof Television && this.sintonizadorTDT == (true)) {
+								preciofinal3= super.precioFinal(television) + 50;
+									return preciofinal3; 
+							}else {
+								if(television instanceof Television && this.resolucion >= 40) {
+									float preciofinal = Utiles.multiplica(super.precioFinal(television), porcentaje);
+										preciofinal2 =super.precioFinal(television) + preciofinal;
+											return preciofinal2;
+							}
+							}
+				return super.precioFinal(television);
 		}
-		return PRECIO_BASE;
-	}
+}
 }

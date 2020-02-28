@@ -13,21 +13,20 @@ public class Electrodomestico {
 	private float peso;
 
 	// Campos de Clase
-	final int PRECIO_BASE = 100000;
+	final float PRECIO_BASE = 100000;
 	final String COLOR = "Blanco";
 	final char CONSUMO_ENERGETICO = 'F';
 	final float PESO = 5;
-	
+
 	// Constructores
 	public Electrodomestico() {
-		this.precioBase = PRECIO_BASE;
 		this.color = COLOR;
 		this.consumoEnergetico = CONSUMO_ENERGETICO;
 		this.peso = PESO;
 	}
 
-	public Electrodomestico(float precio, float peso) {
-		this.precioBase = precio;
+	public Electrodomestico(float precioBase, float peso) {
+		this.precioBase = precioBase;
 		this.color = COLOR;
 		this.consumoEnergetico = CONSUMO_ENERGETICO;
 		this.peso = peso;
@@ -53,7 +52,7 @@ public class Electrodomestico {
 		return peso;
 	}
 
-	public int getPRECIO_BASE() {
+	public float getPRECIO_BASE() {
 		return PRECIO_BASE;
 	}
 
@@ -75,46 +74,47 @@ public class Electrodomestico {
 
 	// Metodos
 	public void comprobarConsumoEnergetico(char letra) {
-			Electrodomestico electro = new Electrodomestico();
-			if (electro.getConsumoEnergetico() == 'A' || electro.getConsumoEnergetico() == 'B' || electro.getConsumoEnergetico() == 'C' 
-					|| electro.getConsumoEnergetico() == 'D' || electro.getConsumoEnergetico() == 'E' || electro.getConsumoEnergetico() == 'F') {
-				electro.getConsumoEnergetico();
-			}else {
-				electro.getCONSUMO_ENERGETICO();
-			}
+		Electrodomestico electro = new Electrodomestico();
+		if (electro.getConsumoEnergetico() == 'A' || electro.getConsumoEnergetico() == 'B'
+				|| electro.getConsumoEnergetico() == 'C' || electro.getConsumoEnergetico() == 'D'
+				|| electro.getConsumoEnergetico() == 'E' || electro.getConsumoEnergetico() == 'F') {
+			electro.getConsumoEnergetico();
+		} else {
+			electro.getCONSUMO_ENERGETICO();
 		}
+	}
 
 	public void comprobarColor(String color) {
 		Electrodomestico electro = new Electrodomestico();
-		if (electro.getColor().equalsIgnoreCase("Blanco") || electro.getColor().equalsIgnoreCase("Negro") || electro.getColor().equalsIgnoreCase("Azul") ||
-				electro.getColor().equalsIgnoreCase("Gris")) {
+		if (electro.getColor().equalsIgnoreCase("Blanco") || electro.getColor().equalsIgnoreCase("Negro")
+				|| electro.getColor().equalsIgnoreCase("Azul") || electro.getColor().equalsIgnoreCase("Gris")) {
 			electro.getColor();
 		} else {
 			electro.getCOLOR();
 		}
 	}
 
-	public float precioFinal() {
-		Electrodomestico electro = new Electrodomestico();
-		if (electro.getPeso()>= 0 && electro.getPeso()<= 19) {
-			float precio = electro.getPrecioBase() + 10;
-			return precio;
-		} else {
-			if (electro.getPeso()>=20 && electro.getPeso()<= 49) {
-				float precio = electro.getPrecioBase() + 50;
-				return precio;
-			} else {
-				if (electro.getPeso()>=50 && electro.getPeso()<= 79) {
-					float precio = electro.getPrecioBase() + 80;
-					return precio;	
-				} else {
-					if (electro.getPeso() >= 80) {
-						float precio = electro.getPrecioBase() + 100;
-						return precio;
-					}
-				}
+	public float precioFinal(Electrodomestico electro) {
+			if (this.peso >= 0 && this.peso <= 19) {
+				float precio = this.PRECIO_BASE + 10;
+				return precio + this.precioBase;
+			}else{
+				if (this.peso >= 20 && this.peso <= 49) {
+					float precio2 = this.PRECIO_BASE + 50;
+					return precio2 + this.precioBase;
+				}else {
+					if (this.peso >= 50 && this.peso <= 79) {
+						float precio3 = this.PRECIO_BASE + 80;
+						return precio3 + this.precioBase;
+					}else {
+						if (this.peso >= 80) {
+							float precio4 = this.PRECIO_BASE + 100;
+							return precio4 + this.precioBase;
+						
+						}
 			}
 		}
-		return CONSUMO_ENERGETICO;
+			}
+		return PRECIO_BASE;
 	}
 }
