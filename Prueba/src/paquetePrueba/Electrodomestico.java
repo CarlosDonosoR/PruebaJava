@@ -3,7 +3,13 @@ package paquetePrueba;
 import java.util.*;
 import java.math.*;
 import java.lang.*;
-
+/**
+ * Clase que define los obejtos tipo Electrodomestico. 
+ * Contiene los métodos para comprobar color, consumo energético y precio 
+ * SuperClase
+ * @author Carlos Donoso R
+ * @version 1.0
+ */
 public class Electrodomestico {
 
 	// Atributos
@@ -73,26 +79,24 @@ public class Electrodomestico {
 	}
 
 	// Metodos
-	public void comprobarConsumoEnergetico(char letra) {
-		Electrodomestico electro = new Electrodomestico();
-		if (electro.getConsumoEnergetico() == 'A' || electro.getConsumoEnergetico() == 'B'
-				|| electro.getConsumoEnergetico() == 'C' || electro.getConsumoEnergetico() == 'D'
-				|| electro.getConsumoEnergetico() == 'E' || electro.getConsumoEnergetico() == 'F') {
-			electro.getConsumoEnergetico();
+	public void comprobarConsumoEnergetico(Electrodomestico electro) {
+		if (this.CONSUMO_ENERGETICO == 'A' || this.CONSUMO_ENERGETICO == 'B'
+				|| this.CONSUMO_ENERGETICO == 'C' || this.CONSUMO_ENERGETICO == 'D'
+				|| this.CONSUMO_ENERGETICO == 'E' || this.CONSUMO_ENERGETICO == 'F') {
+			Utiles.escribir("Consumo energetico correcto");
 		} else {
-			electro.getCONSUMO_ENERGETICO();
-		}
+			Utiles.escribir("Lo siento ese consumo energetico no corresponde");
 	}
+}
 
-	public void comprobarColor(String color) {
-		Electrodomestico electro = new Electrodomestico();
-		if (electro.getColor().equalsIgnoreCase("Blanco") || electro.getColor().equalsIgnoreCase("Negro")
-				|| electro.getColor().equalsIgnoreCase("Azul") || electro.getColor().equalsIgnoreCase("Gris")) {
-			electro.getColor();
+	public void comprobarColor(Electrodomestico electro) {
+		if (this.color.equalsIgnoreCase("Blanco") || this.color.equalsIgnoreCase("Negro")
+				|| this.color.equalsIgnoreCase("Azul") || this.color.equalsIgnoreCase("Gris")) {
+			Utiles.escribir("Color correcto");
 		} else {
-			electro.getCOLOR();
-		}
+			Utiles.escribir("Color no permitido");
 	}
+}
 
 	public float precioFinal(Electrodomestico electro) {
 			if (this.peso >= 0 && this.peso <= 19) {
@@ -112,9 +116,9 @@ public class Electrodomestico {
 							return precio4 + this.precioBase;
 						
 						}
+					}
+				}
 			}
+			return PRECIO_BASE;
 		}
-			}
-		return PRECIO_BASE;
-	}
 }

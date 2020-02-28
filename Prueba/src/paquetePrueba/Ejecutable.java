@@ -12,7 +12,7 @@ public class Ejecutable {
 		electrodomesticos[4] = new Lavadora();
 		electrodomesticos[5] = new Electrodomestico(157,12);
 		electrodomesticos[6] = new Electrodomestico();
-		electrodomesticos[7] = new Electrodomestico(300,"azul",'B',3);
+		electrodomesticos[7] = new Electrodomestico(1300,"azul",'B',12);
 		electrodomesticos[8] = new Television();
 		electrodomesticos[9] = new Lavadora(540,"GRIS",'F',55);
 		
@@ -26,7 +26,6 @@ public class Ejecutable {
 			}else {
 				if(electrodomesticos[i] instanceof Television) {
 				precioTotalTele += electrodomesticos[i].precioFinal(electrodomesticos[i]);
-					
 				}
 			}
 		}
