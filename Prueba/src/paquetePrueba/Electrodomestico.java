@@ -1,8 +1,5 @@
 package paquetePrueba;
 import java.util.*;
-import java.math.*;
-import java.lang.*;
-
 /**
  * Clase que define los obejtos tipo Electrodomestico. Contiene los métodos para
  * comprobar color, consumo energético y precio SuperClase
