@@ -28,6 +28,7 @@ public class Electrodomestico {
 		this.color = COLOR;
 		this.consumoEnergetico = CONSUMO_ENERGETICO;
 		this.peso = PESO;
+		this.precioBase = PRECIO_BASE;
 	}// Fin Constructor
 
 	/**
@@ -51,7 +52,7 @@ public class Electrodomestico {
 	 * @param consumoEnergetico Consumo energetico asignado al objeto
 	 * @param peso              Valor de peso asignado al objeto
 	 */
-	public Electrodomestico(int precioBase, String color, char consumoEnergetico, float peso) {
+	public Electrodomestico(float precioBase, String color, char consumoEnergetico, float peso) {
 		this.precioBase = precioBase;
 		this.color = color;
 		this.consumoEnergetico = consumoEnergetico;
@@ -101,29 +102,29 @@ public class Electrodomestico {
 	public float comprobarConsumoEnergetico(Electrodomestico electro) {
 		float valor = 0;
 		if (this.consumoEnergetico == 'A') {
-			return valor = this.PRECIO_BASE + 100;
+			return valor = 100;
 		} else {
 			if (this.consumoEnergetico == 'B') {
-				return valor = this.PRECIO_BASE + 80;
+				return valor = 80;
 			} else {
 				if (this.consumoEnergetico == 'C') {
-					return valor = this.PRECIO_BASE + 60;
+					return valor = 60;
 				} else {
 					if (this.consumoEnergetico == 'D') {
-						return valor = this.PRECIO_BASE + 50;
+						return valor = 50;
 					} else {
 						if (this.consumoEnergetico == 'E') {
-							return valor = this.PRECIO_BASE + 30;
+							return valor = 30;
 						} else {
 							if (this.consumoEnergetico == 'F') {
-								return valor = this.PRECIO_BASE + 10;
+								return valor = 10;
 							}
 						}
 					}
 				}
 			}
 		}
-		return this.PRECIO_BASE;
+		return valor;
 	}// Fin Metodo
 
 	/**
@@ -149,19 +150,19 @@ public class Electrodomestico {
 	public float precioFinal(Electrodomestico electro) {
 		if (this.peso >= 0 && this.peso <= 19) {
 			float precio = this.PRECIO_BASE + 10;
-			return precio + electro.comprobarConsumoEnergetico(electro);
+			return precio + electro.comprobarConsumoEnergetico(electro) + this.precioBase;
 		} else {
 			if (this.peso >= 20 && this.peso <= 49) {
 				float precio2 = this.PRECIO_BASE + 50;
-				return precio2 + electro.comprobarConsumoEnergetico(electro);
+				return precio2 + electro.comprobarConsumoEnergetico(electro) + this.precioBase;
 			} else {
 				if (this.peso >= 50 && this.peso <= 79) {
 					float precio3 = this.PRECIO_BASE + 80;
-					return precio3 + electro.comprobarConsumoEnergetico(electro);
+					return precio3 + electro.comprobarConsumoEnergetico(electro) + this.precioBase;
 				} else {
 					if (this.peso >= 80) {
 						float precio4 = this.PRECIO_BASE + 100;
-						return precio4 + electro.comprobarConsumoEnergetico(electro);
+						return precio4 + electro.comprobarConsumoEnergetico(electro) + this.precioBase;
 					}
 				}
 			}

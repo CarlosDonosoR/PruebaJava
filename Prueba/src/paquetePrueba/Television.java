@@ -28,8 +28,8 @@ public class Television extends Electrodomestico {
 	 * @param precio Precio asignado al objeto
 	 * @param peso Peso asignado al objeto
 	 */
-	public Television(float precio, float peso) {
-		super(precio, peso);
+	public Television(float precioBase, String color, char consumoEnergetico, float peso) {
+		super(precioBase, color, consumoEnergetico, peso);
 		this.resolucion = RESOLUCION;
 		this.sintonizadorTDT = SINTONIZADOR_TDT;
 	}//Fin Constructor

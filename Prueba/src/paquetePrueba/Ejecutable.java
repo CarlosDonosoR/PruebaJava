@@ -11,7 +11,7 @@ public class Ejecutable {
 		//Campos de la Clase
 		Electrodomestico[] electrodomesticos = new Electrodomestico[10];
 		electrodomesticos[0] = new Lavadora(40);
-		electrodomesticos[1] = new Television(555,80);
+		electrodomesticos[1] = new Television(2555,"Rojo",'A',80);
 		electrodomesticos[2] = new Lavadora(259,68);
 		electrodomesticos[3] = new Television(55,true);
 		electrodomesticos[4] = new Lavadora();
