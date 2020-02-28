@@ -5,7 +5,7 @@ package paquetePrueba;
  * @version 1.0
  */
 public class Television extends Electrodomestico {
-
+	
 	// Atributos
 	private float resolucion;
 	private boolean sintonizadorTDT;
